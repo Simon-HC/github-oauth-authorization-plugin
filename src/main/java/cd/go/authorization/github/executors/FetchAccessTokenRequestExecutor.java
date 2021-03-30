@@ -83,8 +83,8 @@ public class FetchAccessTokenRequestExecutor implements RequestExecutor {
                 .addPathSegment("login")
                 .addPathSegment("oauth")
                 .addPathSegment("access_token")
-                .addQueryParameter("client_id", gitHubConfiguration.clientId())
-                .addQueryParameter("client_secret", gitHubConfiguration.clientSecret())
+                .addHeader("client_id", gitHubConfiguration.clientId())
+                .addHeader("client_secret", gitHubConfiguration.clientSecret())
                 .addQueryParameter("code", request.requestParameters().get("code"))
                 .build().toString();
     }
